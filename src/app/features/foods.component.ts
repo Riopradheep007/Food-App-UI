@@ -55,7 +55,7 @@ export class FoodsComponent implements OnInit {
   // }
   
   openCart() {
-    this.router.navigate(['foods/cart/itemList'])
+    this.router.navigate(['cart'])
   }
 
   logout(){

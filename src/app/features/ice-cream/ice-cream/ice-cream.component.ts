@@ -17,9 +17,7 @@ export class IceCreamComponent implements OnInit {
   ngOnInit(): void {
     const datas:any = this.foodApi.getfoods('icecream')
     .subscribe(data => {
-      this.foods = data.filter((val:any)=> {
-        return val.foodType == "icecream"
-      })
+      this.foods = data;
     }) 
     this.cartService.search.subscribe((val:any)=>{
       this.searchKey = val;

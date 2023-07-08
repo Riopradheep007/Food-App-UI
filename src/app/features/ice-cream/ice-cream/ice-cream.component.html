@@ -2,7 +2,7 @@
    
     <div *ngFor="let food of foods | filter:searchKey:'foodName'" class="foods card-style">
         <div class="image-container">
-            <img  [src]="food.foodImage" alt="" id="food-Images" >
+            <img  [src]="'../../../../assets/RestaurentImageDataBase/'+food.foodImagePath" alt="" id="food-Images" >
         </div>
         <div>
             <h2>{{food.foodName}}</h2>

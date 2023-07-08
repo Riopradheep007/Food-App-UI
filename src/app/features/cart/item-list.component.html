@@ -7,7 +7,7 @@
      <div class="display-cart-food" *ngFor = "let product of products ">
      
          <div class="cart-food image">
-             <img [src]="product.foodImage" alt="">
+             <img [src]="'../../../assets/RestaurentImageDataBase/'+product.foodImagePath" alt="">
          </div>
          <div class="cart-food food-name">
              <h4>{{product.foodName}}</h4>

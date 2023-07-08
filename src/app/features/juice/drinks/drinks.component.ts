@@ -17,9 +17,7 @@ export class DrinksComponent implements OnInit {
   ngOnInit(): void {
     const datas:any = this.foodApi.getfoods('juice')
     .subscribe(data => {
-      this.foods = data.filter((val:any)=> {
-        return val.foodType == "juice"
-      })
+      this.foods = data;
     }) 
     this.cartServ.search.subscribe((val:any)=>{
       this.searchKey = val;
