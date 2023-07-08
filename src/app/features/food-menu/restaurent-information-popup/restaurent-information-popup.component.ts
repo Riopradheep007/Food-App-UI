@@ -42,6 +42,7 @@ export class RestaurentInformationPopupComponent implements OnInit {
     payload.RestaurentStatus = this.restaurentInformationForm.get('status')?.value == 'Open'?'Y':'N';
     this.resturentFoodService.updateRestaurentInformation(payload).subscribe((res:any)=>{
       this.snackBar.success("Restaurent Information updated successfully");
+      // this.getRestaurentInformation();
       this.dialogRef.close({ data: true });
     });
   }

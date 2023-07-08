@@ -5,7 +5,8 @@ const controllerName = {
    COMMON:'/Common',
    AUTHENTICATE:'/Authenticate',
    RESTAURENT:'/Restaurent',
-   SIGNUP:'/signup'
+   SIGNUP:'/signup',
+   CUSTOMER:'/customer'
 };
 
 export const api_url = {
@@ -22,6 +23,9 @@ export const api_url = {
     RESTAURENT_GET_ALL_FOODS:`${controllerName.RESTAURENT}/foods`,
     RESTAURENT:`${controllerName.RESTAURENT}`,
     UPDATE_FOOD:`${controllerName.RESTAURENT}/foods`,
+    GET_ALL_FOODS:`${controllerName.RESTAURENT}/foods`,
 
-    //
+    //Customer
+    GET_ALL__RESTAURENT_FOODS:`${controllerName.CUSTOMER}/foods`,
+
 };

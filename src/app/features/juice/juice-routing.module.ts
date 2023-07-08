@@ -4,16 +4,12 @@ import { DrinksComponent } from './drinks/drinks.component';
 
 const routes: Routes = [
   {
-    path:'drinks',
+    path:'',
     component:DrinksComponent,
   },
   {
-    path:'',
-    redirectTo:'drinks'
-  },
-  {
     path:'**',
-    redirectTo:'drinks'
+    redirectTo:'juice'
   }
 ];
 

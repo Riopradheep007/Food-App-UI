@@ -112,6 +112,7 @@ export class MenuComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res=>{
       if(res)
       {
+        this.getRestaurentInformation();
       }
     })
   }
