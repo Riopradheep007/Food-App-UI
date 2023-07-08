@@ -1,0 +1,145 @@
+<div class="container">
+   <div class="infoContainer">
+       <div class="informationHeading">
+            <h2>Get started with online ordering</h2>
+            <h4>Please keep the documents ready for a smooth signup</h4>
+       </div>
+       <div class="dataContainer" >
+            <div class="information" *ngFor="let data of informationList">
+                <mat-icon class="tickCircle">check_circle</mat-icon>
+                <h3>{{data}}</h3>
+            </div>
+       </div>
+   </div>
+    <div class="form-container">
+        <mat-stepper linear #stepper >
+            <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Fill out your Details</ng-template>
+                <div class="inputContainer">
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput formControlName="Name" placeholder="Name" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="Email" placeholder="Email" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput formControlName="PhoneNumber" placeholder="PhoneNumber" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                            <mat-label>RestaurentName</mat-label>
+                            <input matInput formControlName="RestaurentName" placeholder="RestaurentName" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="Address" placeholder="Address" required>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div>
+                  <button mat-button matStepperNext class="button-color small-btn">Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Fill out your Documents information</ng-template>
+                <div class="inputContainer">
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                        <mat-label>PanNumber</mat-label>
+                        <input matInput formControlName="PanNumber" placeholder="PAN Number"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                        <mat-label>Regular GSTIN</mat-label>
+                        <input matInput formControlName="GstinNumber" placeholder="GSTIN Number"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                        <mat-label>FSSAI Number</mat-label>
+                        <input matInput formControlName="FssaiNumber" placeholder="FSSAI  Number"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                        <mat-label>IFSC Code</mat-label>
+                        <input matInput formControlName="IfscCode" placeholder="IFSC Code"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                        <mat-label>Account Number</mat-label>
+                        <input matInput formControlName="AccountNumber" placeholder="Account Number"
+                                required>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious (click)="isEditable = !isEditable" class="button-color small-btn">Back</button>
+                    <button mat-button matStepperNext class="button-color small-btn">Next</button>
+                </div>
+              
+              </form>
+            </mat-step>
+            <mat-step  [stepControl]="thirdFormGroup" [editable]="isEditable">
+             <form [formGroup]="thirdFormGroup">
+                <div class="inputContainer">
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password" placeholder="Password"
+                                required [type]="passwordHide? 'password':'text'">
+                        <button mat-icon-button matSuffix [disableRipple]="true" (click)="passwordHide = !passwordHide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+                        <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        </mat-form-field>
+                        <mat-error *ngIf="passwordError">
+                            password is not match
+                        </mat-error>
+                    </div>
+                    <div class="inputField">
+                        <mat-form-field appearance="outline">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput formControlName="confirmPassword" placeholder="Confirm Password"
+                                required [type]="confirmPasswordHide? 'password':'text'">
+                        <button mat-icon-button matSuffix [disableRipple]="true" (click)="confirmPasswordHide = !confirmPasswordHide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="confirmPasswordHide">
+                        <mat-icon>{{confirmPasswordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        </mat-form-field>
+                       
+                    </div>
+                </div>
+                 <ng-template matStepLabel>Done</ng-template>
+                 <p>You are now done.</p>
+                 <div>
+                   <button mat-button matStepperPrevious (click)="isEditable = !isEditable" class="button-color small-btn">Back</button>
+                   <button mat-button class="button-color small-btn" (click)="signup()">Confirm</button>
+                 </div>
+             </form>
+            </mat-step>
+          </mat-stepper>
+    </div>
+
+</div>

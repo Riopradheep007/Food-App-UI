@@ -1,0 +1,51 @@
+
+<app-header></app-header>
+<div class="container">
+    <div class="display-image">
+        <img src="../../../assets/bikee.jpg" alt="honeybread">
+    </div>
+    <div class="form-container">
+        <div class="top-name">
+            <h2>Login</h2>
+            <small class="last-line">or <span (click)="navigateCustomerSignup()" class="signupLink">create an account</span></small>
+        </div>
+        <form class="form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="email address" required>
+                </mat-form-field>
+            </div>
+            <div class="validator" *ngIf="email && email.invalid && email.touched">
+                <small>enter your email address</small> 
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" placeholder="password" required>
+                </mat-form-field>
+            </div>
+            <div *ngIf="password && password.errors && password.touched">
+                <small class="validator" *ngIf="password && password.errors?.['required']">
+                    password required</small>
+                    <small class="validator" *ngIf="password.errors?.['minlength']"> 
+                    minimum 5 character
+                </small>
+            </div>
+            <div class="inputField">
+                <mat-form-field appearance="outline">
+                    <mat-label>Choose Your Role</mat-label>
+                    <mat-select formControlName="roles" >
+                        <mat-option *ngFor="let role of roles" [value]=role>
+                        {{role}}
+                        </mat-option>
+                    </mat-select>
+                    </mat-form-field>
+            </div>
+        </form>
+        <button type="submit" mat-raised-button class="button-color small-btn submitBtn"  [disabled]="loginForm.invalid" (click)="login()">Login</button>
+
+    </div>
+
+</div>

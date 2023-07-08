@@ -1,0 +1,24 @@
+
+
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+input[type="file"] {
+    display: none;
+  }
+
+  .upload img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .upload {
+    width: 210px;
+  }
+.mt-2
+{
+  margin-top:20px;
+}

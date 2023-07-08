@@ -1,0 +1,55 @@
+<h2 mat-dialog-title *ngIf="data.mode == pageMode.ADD">ADD Food </h2>
+<h2 mat-dialog-title *ngIf="data.mode == pageMode.EDIT">Edit Food </h2>
+<div mat-dialog-content class="mt-2">
+    <div [formGroup]="addFoodForm" class="container">
+        <div class="upload">
+            <input type="file" id="file-1" accept="image/*">
+            <label for="file-1" id="file-1-preview">
+                <div class="image-container">
+                    <img  [src]="url" alt=""  (click)="previewBeforeUpload()">
+                </div>
+            </label>
+        </div>
+        <div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Food Name</mat-label>
+                    <input matInput formControlName="foodName" placeholder="Food Name" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Food Type</mat-label>
+                    <mat-select formControlName="foodType" >
+                      <mat-option *ngFor="let foodType of foodTypes" [value]=foodType>
+                        {{foodType}}
+                     </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input type="number" matInput formControlName="price" placeholder="price" [min]=0 required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Food currently Available</mat-label>
+                    <mat-select formControlName="currentlyAvailable" >
+                      <mat-option *ngFor="let isAvalilable of foodCurrentlyavailable" [value]=isAvalilable>
+                        {{isAvalilable}}
+                     </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close class="close-btn" >close</button>
+  <button mat-button mat-dialog-close cdkFocusInitial class="button-color small-btn"  *ngIf="data.mode == pageMode.ADD" (click)="addFood()">confirm</button>
+  <button mat-button mat-dialog-close cdkFocusInitial class="button-color small-btn" *ngIf="data.mode == pageMode.EDIT" (click)="updateFood()">update</button>
+</div>

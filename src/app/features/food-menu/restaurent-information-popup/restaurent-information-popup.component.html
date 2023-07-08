@@ -1,0 +1,41 @@
+
+<div class="restaurent-information-container">
+  <h2>Restaurent Information</h2>
+  <div class="restaurent-information">
+      <div class="restaurent-fields-container" [formGroup]="restaurentInformationForm">
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Restaurent Name</mat-label>
+                <input matInput formControlName="restaurentName"  required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description"  required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="address"  required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status" >
+                  <mat-option *ngFor="let status of restaurentStatus" [value]=status>
+                    {{status}}
+                 </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+      </div>
+
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="close-btn" >close</button>
+    <button mat-button mat-dialog-close cdkFocusInitial class="button-color small-btn" (click)="updateRestaurentInformation()">update</button>
+  </div>
+</div>

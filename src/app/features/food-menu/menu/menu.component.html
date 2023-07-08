@@ -1,0 +1,35 @@
+<div class="header">
+    <mat-card>
+        <mat-card-header>
+          <div class="restaurent-Name-Container">
+            <mat-card-title>{{restaurentName}}<mat-icon (click)="editRestaurentInformation()">edit</mat-icon></mat-card-title>
+     
+            <mat-card-subtitle>{{address}}</mat-card-subtitle>
+          </div>
+          <div class="card-btn">
+            <button mat-button class="button-color" (click)="openFoodPopup(PageMode.ADD)"><mat-icon>add</mat-icon>ADD Food</button>
+          </div>
+        </mat-card-header>
+       
+    </mat-card>
+</div>
+
+<div class="container">
+   
+  <div *ngFor="let food of displayFoods | filter:searchKey:'foodName'" class="food-card card-style">
+      <div class="image-container">
+          <img  [src]="'../../../../assets/RestaurentImageDataBase/'+food.imagePath" alt="" id="food-Images" >
+      </div>
+      <div class="food-info">
+        <h3>{{food.foodName}}</h3>
+        <span class="foodStatus {{food.currentlyAvailable}}"></span>
+      </div>
+      <div>
+          <span>{{food.price | currency:"INR"}}</span>
+      </div>
+      <div class="action-container">
+        <mat-icon (click)="openFoodPopup(PageMode.EDIT,food)">edit_note</mat-icon>
+        <mat-icon class="delete-btn" (click)="onDelete(food.foodName,food)">delete</mat-icon>
+      </div>
+  </div>
+</div>

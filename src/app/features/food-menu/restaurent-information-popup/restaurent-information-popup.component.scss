@@ -1,0 +1,33 @@
+.restaurent-information-container {
+
+    h2 {
+        padding-bottom: 10px;
+    }
+    .restaurent-information
+    {
+        display: flex;
+        gap:20px;
+        .restaurent-img{
+            max-width: 300px;
+        }
+        img {
+            width: 300px;
+            object-fit: cover;
+        }
+    
+        input[type="file"] {
+            display: none;
+          }
+       
+
+        .restaurent-fields-container{
+            display: flex;
+            flex-wrap: wrap;
+            
+            div {
+                margin: 10px;
+            }
+        }
+    
+    }
+}

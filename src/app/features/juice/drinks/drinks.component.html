@@ -1,0 +1,16 @@
+<div class="container">
+   
+    <div *ngFor="let food of foods | filter:searchKey:'foodName'" class="foods card-style">
+        <div class="image-container">
+            <img  [src]="food.foodImage" alt="" id="food-Images" >
+        </div>
+        <div>
+            <h2>{{food.foodName}}</h2>
+            <h3 >{{food.restaurentName}}</h3>
+            <p>{{food.price | currency:"INR"}}</p>
+            <div class="wrapper">
+                <button  mat-raised-button class="button-color"  (click)="addToCart(food)">ADD</button>
+              </div>
+        </div>
+    </div>
+</div>

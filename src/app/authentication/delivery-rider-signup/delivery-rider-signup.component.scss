@@ -1,0 +1,70 @@
+.container {
+    display:flex;
+    gap:40px;
+    margin: auto;
+    width: 95%;
+    margin-top: 5%;
+    height: 60%;
+}
+
+
+.infoContainer {
+    max-width:35%;
+    background: rgb(244, 244, 244);
+    border-radius: 10px;
+    padding: 10px;
+    height: fit-content;
+}
+.informationHeading{
+   text-align: center;
+} 
+
+.dataContainer {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+    .information {
+        display: flex;
+        min-width: 50%;
+        margin-top:10px;
+        margin-bottom: 10px;
+        .tickCircle {
+            color:  rgb(58, 183, 87);
+          }
+         h3 {
+            margin-left: 3px;
+         }
+    }
+}
+
+.form-container {
+    max-width:80%;
+    
+    .inputContainer {
+      display: flex;
+      flex-wrap: wrap;
+      .inputField {
+          margin-left: 20px;
+      }
+      mat-form-field{
+        border-color: black;
+      }
+    }
+    .small-btn {
+        margin-left: 10px;
+    }
+    ::ng-deep .mat-step-header .mat-step-icon-state-edit{
+      background-color: black !important;
+    }
+    ::ng-deep .mat-step-header .mat-step-icon-selected {
+      background-color: black !important;
+    }
+
+    ::ng-deep .mat-step-header .mat-step-icon-state-done {
+      background-color: var(--primary-color) !important;
+    }
+ 
+    ::ng-deep .mat-input-element {
+      background-color: white !important;
+    }
+  }

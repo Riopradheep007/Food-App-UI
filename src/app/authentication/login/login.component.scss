@@ -1,0 +1,66 @@
+.main-container {
+    min-height:  100% !important;
+    border: 2px solid red;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0 15px 15px 15px;
+    gap: 20%;
+    margin:10px 0;
+
+}
+
+
+img {
+    max-width: 100%;
+    height:auto;
+}
+
+.form-container{
+    /* border:2px solid red; */
+    max-height: auto;
+    padding:0 10px;
+}
+.top-name {
+    padding:5px 0 5px 0;
+    margin-bottom: 5px;
+}
+ .asterix{
+     color:red;
+ }
+ .signupLink {
+     color:var(--primary-color) ;
+     cursor: pointer;
+ }
+ .last-line {
+     position: relative;
+ }
+ .last-line::after {
+    display: block;
+    content: '';
+    width: 35px;
+    height: 3px;
+    background: var(--secondary-color);
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+
+ }
+ ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: black !important;
+  }
+ 
+.form {
+    margin-top:20px;
+}
+.submitBtn{
+    margin-top: 5px;
+}
+
+
+.validator{
+    color:red;
+}

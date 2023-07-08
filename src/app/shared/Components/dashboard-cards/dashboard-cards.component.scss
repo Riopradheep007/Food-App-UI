@@ -1,0 +1,18 @@
+.dashboard-cards{
+    border-radius: 10px;
+    padding: 5px;
+    min-width: 200px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    .card-info{
+        display: flex;
+        justify-content: space-between;
+    }
+    mat-icon{
+        font-size: 24px;
+    }
+    .count{
+     display: flex;
+     align-items: center;
+     font-size: 17px;
+    }
+}

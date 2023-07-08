@@ -1,0 +1,14 @@
+.dashboard-container {
+    margin: 10px;
+    .widgets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .charts-container{
+        display: flex;
+        .chart {
+            flex-grow: 1;
+        }
+    }
+}

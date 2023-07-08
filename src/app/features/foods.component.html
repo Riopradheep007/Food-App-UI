@@ -1,0 +1,62 @@
+
+  <div class="main-container" *ngIf="true">
+    <mat-drawer-container class="example-container" fullscreen>
+      <mat-drawer  #drawer [style.width]="sideNavWidth" mode="side" opened= true  mode="side">
+
+        <img class="logo" src="../.././../assets/checkLogo.jpg" alt="">
+          <div class="example-sidenav">
+            <div *ngFor="let data of sideBarMenu">
+              <li><a routerLink={{data.routeLink}} routerLinkActive="active"  >
+                <mat-icon class="matIcons">{{data.iconName}}</mat-icon>
+                <span class="icon-text">{{data.displayName}}</span>
+               </a></li>
+            </div>
+          </div>
+
+          <div class="example-sidenav secondary-icon">
+            <li>
+              <a>
+                <mat-icon class="matIcons">settings</mat-icon>
+               </a>
+             </li>
+             <li (click)="expand(drawer)">
+              <a>
+                <mat-icon  class="matIcons expander" style="transform: rotate(90deg);">expand</mat-icon>
+               </a>
+             </li>
+             <li (click)="logout()">
+              <a>
+                <mat-icon class="matIcons logout">logout</mat-icon>
+               </a>
+             </li>
+          </div>
+
+      </mat-drawer>
+      <header>
+          <div class="top-bar">
+              <div class="search-area-container">
+                <mat-form-field  class="searchField"    appearance="outline">
+                  <div class="iconInputField">
+                    <mat-icon class="searchIcons" matPrefix>search</mat-icon>
+                    <input type="text"  matInput placeholder="Search"(keyup)="search($event)">
+                  </div>
+                </mat-form-field>
+              </div>
+              <div class="user-notification-container">
+                <div>
+                  <span *ngIf="isRestaurentOwner" class="material-icons icon-hover"  [matBadgeHidden]="totalItem > 0?false:true" matBadge={{totalItem}} (click)="openCart()" matBadgeColor="warn"style="font-size: 30px;">  notifications</span>
+                </div>
+                <div class="profile">
+                  <span class="semi-bold fs-18">{{userName}}</span>
+                  <img  src="../../../assets/menImage.jpg" alt="" class="profileImage" >
+                 </div>
+              </div>
+             
+          </div>
+      </header>
+       
+      <router-outlet></router-outlet>
+    </mat-drawer-container>
+  </div>
+
+
