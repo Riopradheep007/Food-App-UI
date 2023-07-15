@@ -1,7 +1,16 @@
 
+.cart {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .container {
     padding:15px;
     margin:10px 10px;
+    overflow: auto;
+    max-height: 400px;
+    min-height: 400px;
 }
 
 .display-cart-food {
@@ -40,6 +49,7 @@ button:hover:enabled {
     cursor:pointer;
     background-color:var(--secondary-color) ;
     border:white;
+    color: white;
 }
 
 .total-price {

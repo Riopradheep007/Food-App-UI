@@ -21,15 +21,15 @@ export class CartService {
     return this.totalFoodPrice.asObservable();
   }
   addtoCart(product: any) {
-    if(this.foodList[product.id]?false:true) {
-      this.foodList[product.id] = product;
-      this.foodList[product.id]['orginalPrice'] = product.price;
-      this.foodList[product.id]['count'] = 1;
-      this.cartItemList.push(this.foodList[product.id]);
+    if(this.foodList[product.foodId]?false:true) {
+      this.foodList[product.foodId] = product;
+      this.foodList[product.foodId]['orginalPrice'] = product.price;
+      this.foodList[product.foodId]['count'] = 1;
+      this.cartItemList.push(this.foodList[product.foodId]);
       this.productList.next(this.cartItemList);
     }
     else{
-      this.foodList[product.id]['count'] += 1;
+      this.foodList[product.foodId]['count'] += 1;
       this.setParticularFoodPrice(product);
     }
     
@@ -46,15 +46,15 @@ export class CartService {
   
   setParticularFoodPrice(product:any){
     for(let id of Object.keys(this.foodList)){
-      if(product.id == id){
-        let orginalFoodPrice =  this.foodList[product.id].orginalPrice; 
-        this.foodList[product.id].price += parseInt(orginalFoodPrice);
+      if(product.foodId == id){
+        let orginalFoodPrice =  this.foodList[product.foodId].orginalPrice; 
+        this.foodList[product.foodId].price += parseInt(orginalFoodPrice);
       }
     }
   }
   
   removeFoodFromCart(product:any) {
-    delete this.foodList[product.id];
+    delete this.foodList[product.foodId];
     this.cartItemList = [];
   
     for (let key in this.foodList) {
@@ -65,14 +65,14 @@ export class CartService {
   }
   
   removeCartItem(product: any) {
-    if(this.foodList[product.id]) {
+    if(this.foodList[product.foodId]) {
       for(let id of Object.keys(this.foodList)){
-        if(product.id == id){
-          let orginalFoodPrice =  this.foodList[product.id].orginalPrice; 
-          if(this.foodList[product.id].price > 0){
-            this.foodList[product.id].price -= parseInt(orginalFoodPrice);
-            this.foodList[product.id]['count'] -= 1;
-            if( this.foodList[product.id].price == 0 ){
+        if(product.foodId == id){
+          let orginalFoodPrice =  this.foodList[product.foodId].orginalPrice; 
+          if(this.foodList[product.foodId].price > 0){
+            this.foodList[product.foodId].price -= parseInt(orginalFoodPrice);
+            this.foodList[product.foodId]['count'] -= 1;
+            if( this.foodList[product.foodId].price == 0 ){
                 this.removeFoodFromCart(product)
             }
           }

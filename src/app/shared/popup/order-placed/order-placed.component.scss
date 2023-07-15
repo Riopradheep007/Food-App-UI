@@ -1,0 +1,24 @@
+.order-placed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .success {
+        width: 130px;
+        height: 130px;
+    }
+
+    .ok-btn {
+        background-color:var(--primary-color) ;
+        color: black;
+    }
+
+    button:hover:enabled {
+        cursor:pointer;
+        background-color:var(--secondary-color) ;
+        border:white;
+        color:white;
+    }
+
+}

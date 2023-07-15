@@ -30,7 +30,7 @@ export class RestaurentSignupComponent implements OnInit {
     password:['',Validators.required],
     confirmPassword:['',Validators.required]
   });
-  isEditable = true;
+  isEditable = false;
   passwordHide = true;
   confirmPasswordHide = true;
   passwordError = false;
