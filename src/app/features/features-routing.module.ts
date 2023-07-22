@@ -21,7 +21,7 @@ const routes: Routes = [
         loadChildren:()=>import('./dashboard/dashboard.module').then((m)=>m.DashboardModule)
       },
       {
-        path:'food',
+        path:'spices',
         loadChildren: () => import('./food/food.module').then((m)=>m.FoodModule)
       },
       {

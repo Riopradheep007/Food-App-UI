@@ -9,11 +9,11 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo:'food'
+    redirectTo:'spices'
   },
   {
     path:'**',
-    redirectTo:'food'
+    redirectTo:'spices'
   }
 ];
 
