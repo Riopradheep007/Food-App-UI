@@ -7,6 +7,7 @@ import { customerLogin } from 'src/app/models/login.models';
 import { SharedService } from 'src/app/shared/shared.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
+import { SignalrService } from 'src/app/service/signalr.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ import { throwError } from 'rxjs';
 export class LoginComponent implements OnInit {
 
   roles:string[]= ["Customer","Restaurent","DeliveryRider"];
-  constructor(private api:UserauthService,private router:Router,
+  constructor(private api:UserauthService,private router:Router,private signalrService:SignalrService,
     private snackBar:SnackbarService,private sharedService:SharedService) {
 
   }
@@ -28,6 +29,10 @@ export class LoginComponent implements OnInit {
   //   if(this.api.isInvalid) {
   //     this.router.navigate(['spices'])
   //  }
+  this.signalrService.broadCastData('hello');
+  this.signalrService.helloMessage().subscribe((res:any) =>{
+     console.log(res);
+  })
   }
 
   loginForm = new FormGroup({
