@@ -40,6 +40,27 @@ export class SignalrService {
       });
     })
   }
+  getSpicesData() {
+    return new Observable(observer => {
+      this.connection.on('Spices', (data: any) => {
+        observer.next(data);
+      });
+    })
+  }
+  getJuiceData() {
+    return new Observable(observer => {
+      this.connection.on('Juice', (data: any) => {
+        observer.next(data);
+      });
+    })
+  }
+  getIceCreamData() {
+    return new Observable(observer => {
+      this.connection.on('IceCream', (data: any) => {
+        observer.next(data);
+      });
+    })
+  }
  
 
 }

@@ -101,7 +101,9 @@ export class AddFoodPopupComponent implements OnInit {
      price:this.addFoodForm.get('price')?.value,
      currentlyAvailable:this.addFoodForm.get('currentlyAvailable')?.value == 'Yes'? 'Y':'N',
      foodImage: this.newlyUploadedImage?this.url:"",
-     imagePath:this.data.foodData.imagePath
+     imagePath:this.data.foodData.imagePath,
+     foodType: this.addFoodForm.getRawValue().foodType
+
     }
     this.resturentFoodService.updateFood(data).subscribe((resp)=>{
       this.snackBar.success("Food updated successfully");
