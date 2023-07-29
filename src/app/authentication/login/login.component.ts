@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
           this.sharedService.setUserInformationInSessionStorage(res);
             setTimeout(() =>{
             this.loginForm.reset();
-            this.router.navigate(["/dashboard"]);
+            this.pageToNavigate(JSON.parse(res).role);
           },560)
         }
       },
@@ -69,6 +69,17 @@ export class LoginComponent implements OnInit {
         this.snackBar.open("You dont have account singup and login",'X','snackBarWarning');
       }});
   }
+  
+  pageToNavigate(role:string) {
+    if(role == "Restaurent") {
+      this.router.navigate(["/dashboard"]);
+    }
+    else if(role =="Customer")
+    {
+      this.router.navigate(["/spices"]);
+    }
+  }
+
   onSubmit() {
   }
 

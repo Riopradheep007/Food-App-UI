@@ -1,0 +1,53 @@
+<div class="orders">
+    <h1>Orders</h1>
+    <div *ngFor="let order of orders">
+        <div class="order-card">
+            <mat-card>
+                <div class="card-info">
+                    <div>
+                        <mat-card-header>
+                            <mat-card-title-group>
+                                    <mat-card-title>Order# {{order.orderId}}</mat-card-title>
+                                    <mat-card-subtitle>{{order.date}}</mat-card-subtitle>
+                            </mat-card-title-group>
+                        </mat-card-header>
+                    </div>
+                    <div>
+                        <mat-card-header>
+                            <div class="user-info">
+                                <div class="center-item">
+                                    <span class="material-icons">person</span><span>{{order.name}}</span>
+                                </div>
+                                <div class="center-item">
+                                    <span class="material-icons">credit_card</span> <span>{{order.paid}}</span>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                    </div>
+                    <div class="center-item">
+                        <span class="material-icons circle-width" [ngClass]="'color'+order.status">circle</span>
+                        <span *ngIf="order.status == 0" [ngClass]="'color'+order.status">{{"Pending"}}</span>
+                        <span *ngIf="order.status == 1" [ngClass]="'color'+order.status">{{"Preparing"}}</span>
+                        <span *ngIf="order.status == 2" [ngClass]="'color'+order.status">{{"Delivered"}}</span>
+                    </div>
+                    <div *ngIf="order.status == 0" class="center-item align-end btn">
+                            <div>
+                                <button mat-button cdkFocusInitial class="accept-btn small-btn">Accept</button>
+                            </div>
+                            <div>
+                                <button mat-button class="decline-btn" >Decline</button>
+                            </div>
+                    </div>
+                    <div class="center-item" *ngIf="order.status == 1">
+                        <span class="material-icons cursor-pointer">text_snippet</span>
+                    </div>
+                    <div class="center-item btn align-end" *ngIf="order.status == 1">
+                        <button mat-button  class="button-color">Mark as Prepared</button>
+                    </div>
+                </div>
+        
+            </mat-card>
+        </div>
+    </div>
+
+</div>

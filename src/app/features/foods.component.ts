@@ -16,8 +16,6 @@ export class FoodsComponent implements OnInit {
   showFiller = false;
   public searchTerm !: string;
   menuItems:any;
-  isRestaurentOwner = true;
-  isCustomer = false;
   constructor(private router:Router,private cartservice:CartService,
      private sharedService:SharedService) { }
   sideBarMenu:SideBarMenu[] = [];
@@ -56,6 +54,10 @@ export class FoodsComponent implements OnInit {
   
   openCart() {
     this.router.navigate(['cart'])
+  }
+
+  openOrders() {
+    this.router.navigate(['orders']);
   }
 
   logout(){

@@ -1,8 +1,17 @@
 .dashboard-cards{
     border-radius: 10px;
     padding: 5px;
-    min-width: 200px;
+    min-width: 205px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    background-color: #38DBB9;
+
+    // .background {
+    //     background-color: green;
+    // }
+    // .icon-color
+    // {
+    //     color: green !important;
+    // }
     .card-info{
         display: flex;
         justify-content: space-between;
@@ -14,5 +23,8 @@
      display: flex;
      align-items: center;
      font-size: 17px;
+    }
+    .txt-color{
+        color:white;
     }
 }

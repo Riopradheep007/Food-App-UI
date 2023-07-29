@@ -3,12 +3,17 @@
     .widgets {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 25px;
     }
     .charts-container{
         display: flex;
+        margin-top: 35px;
         .chart {
-            flex-grow: 1;
+            min-width: 50%;
+        }
+        .food-chart {
+            margin-left: 15%;
+            min-height: 250px;      
         }
     }
 }

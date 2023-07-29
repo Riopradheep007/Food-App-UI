@@ -1,0 +1,63 @@
+.orders {
+    margin: 10px;
+    min-height: 80%;
+    max-height: 80%;
+    overflow: auto;
+    .order-card {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        margin-left: 2%;
+        margin-right: 2%;
+    
+
+        .card-info{
+            display: flex;
+            gap: 10%;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            min-width:100px;
+            max-width: 100px;
+        }
+        .center-item {
+            display: flex;
+            align-items: center;
+            gap:10px;
+        }
+        .circle-width{
+            font-size: 16px;
+        }
+        .color0 {
+            color: red;
+        }
+        .color1 {
+            color: #F5A829;
+        }
+        .color2 {
+            color: green;
+        }
+        .btn {
+            display: flex;
+            gap: 20px;
+        }
+        .align-end {
+          margin-left: auto;
+        }
+        .accept-btn {
+            background-color: green;
+            color: white;
+        }
+        .decline-btn {
+            background-color: rgba(255, 0, 0, 0.852);
+            color: white;
+        }
+        .cursor-pointer {
+            cursor: pointer;
+        }
+    }
+    .mat-card {
+        padding: 10px !important;
+    }
+}

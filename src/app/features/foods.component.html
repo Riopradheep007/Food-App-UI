@@ -44,7 +44,8 @@
               </div>
               <div class="user-notification-container">
                 <div>
-                  <span *ngIf="isRestaurentOwner" class="material-icons icon-hover"  [matBadgeHidden]="totalItem > 0?false:true" matBadge={{totalItem}} (click)="openCart()" matBadgeColor="warn"style="font-size: 30px;">  notifications</span>
+                  <span *ngIf="role == 'Restaurent'" class="material-icons icon-hover"  [matBadgeHidden]="totalItem > 0?false:true" matBadge={{totalItem}} (click)="openOrders()" matBadgeColor="warn"style="font-size: 30px;">  notifications</span>
+                  <span *ngIf="role == 'Customer'" class="material-icons icon-hover"  [matBadgeHidden]="totalItem > 0?false:true" matBadge={{totalItem}} (click)="openCart()" matBadgeColor="warn"style="font-size: 30px;"> shopping_bag</span>
                 </div>
                 <div class="profile">
                   <span class="semi-bold fs-18">{{userName}}</span>
