@@ -8,7 +8,7 @@ import { coreApiURL } from '../constants/api.constants';
 })
 export class RestaurentUserService {
 
-  private baseUrl = coreApiURL+"RestaurentsLogin";
+  private baseUrl = coreApiURL+"/RestaurentsLogin";
   constructor(private http: HttpClient) {
   }
   checkLoginData(data: any) {

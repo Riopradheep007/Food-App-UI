@@ -95,11 +95,9 @@ export class MenuComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe(res=>{
-      if(res)
+      if(res.data)
       {
-        setTimeout(()=>{
           this.getAllFoods();
-        },1000)
       }
     })
   }
@@ -110,7 +108,7 @@ export class MenuComponent implements OnInit {
       width: '500px',
     });
     dialogRef.afterClosed().subscribe(res=>{
-      if(res)
+      if(res.data)
       {
         this.getRestaurentInformation();
       }

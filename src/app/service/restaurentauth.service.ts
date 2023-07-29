@@ -11,7 +11,7 @@ export class RestaurentauthService {
   RestaurentStorageData:any;
   userLoginId:any = "";
   private  isValidUser = new Subject<boolean>();
-  private  baseUrl = coreApiURL+"Restaurents";
+  private  baseUrl = coreApiURL+"/Restaurents";
   constructor(private http: HttpClient) {
 
    }

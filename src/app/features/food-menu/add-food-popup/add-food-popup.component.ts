@@ -105,7 +105,7 @@ export class AddFoodPopupComponent implements OnInit {
      foodType: this.addFoodForm.getRawValue().foodType
 
     }
-    this.resturentFoodService.updateFood(data).subscribe((resp)=>{
+    this.resturentFoodService.updateFood(data).subscribe((resp:any)=>{
       this.snackBar.success("Food updated successfully");
       this.dialogRef.close({ data: true });
     })

@@ -50,6 +50,6 @@
 </div>
 <div mat-dialog-actions align="end">
   <button mat-button mat-dialog-close class="close-btn" >close</button>
-  <button mat-button mat-dialog-close cdkFocusInitial class="button-color small-btn"  *ngIf="data.mode == pageMode.ADD" (click)="addFood()">confirm</button>
-  <button mat-button mat-dialog-close cdkFocusInitial class="button-color small-btn" *ngIf="data.mode == pageMode.EDIT" (click)="updateFood()">update</button>
+  <button mat-button cdkFocusInitial class="button-color small-btn"  *ngIf="data.mode == pageMode.ADD" (click)="addFood()">confirm</button>
+  <button mat-button cdkFocusInitial class="button-color small-btn" *ngIf="data.mode == pageMode.EDIT" (click)="updateFood()">update</button>
 </div>

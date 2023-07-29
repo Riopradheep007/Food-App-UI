@@ -1,14 +1,16 @@
 <div class="container">
    
     <div *ngFor="let food of foods | filter:searchKey:'foodName'" class="foods card-style">
-        <div class="image-container">
-            <img  [src]="'../../../../assets/RestaurentImageDataBase/'+food.foodImagePath" alt="" id="food-Images" >
-        </div>
-        <div>
-            <h2>{{food.foodName}}</h2>
-            <h3>{{food.restaurentName}}</h3>
-            <p>{{food.price | currency:"INR"}}</p>
-            <button mat-raised-button class="button-color" (click)="addToCart(food)">ADD</button>
+        <div [ngClass]="food.currentlyAvailable == 'N'?'disable-food':''">
+            <div class="image-container">
+                <img  [src]="'../../../../assets/RestaurentImageDataBase/'+food.foodImagePath" alt="" id="food-Images" >
+            </div>
+            <div>
+                <h2>{{food.foodName}}</h2>
+                <h3>{{food.restaurentName}}</h3>
+                <p>{{food.price | currency:"INR"}}</p>
+                <button mat-raised-button class="button-color" (click)="addToCart(food)">ADD</button>
+            </div>
         </div>
     </div>
 </div>
