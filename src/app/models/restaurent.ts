@@ -7,3 +7,13 @@ export interface RestaurentInformation
     imagePath:string
     restaurentStatus:string
 }
+
+export interface orderDetails
+{
+    name:string,
+    paid:number,
+    orderDetails:[string],
+    status:number,
+    restaurentId:number,
+    location:string
+}

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginForm = new FormGroup({
-    email: new FormControl('pradheep1341@gmail.com', [Validators.required, Validators.email]),
+    email: new FormControl('pradheep1341@gmail.com', [Validators.required]),
     password: new FormControl('1234', [Validators.required, Validators.minLength(2)]),
     roles: new FormControl('Restaurent',[Validators.required])
   });

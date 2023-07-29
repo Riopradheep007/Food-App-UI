@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { api_url, coreApiURL } from '../constants/api.constants';
+import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +15,7 @@ export class CartService {
   public totalFoodPrice = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getProducts() {
     return this.productList.asObservable();
@@ -88,5 +91,9 @@ export class CartService {
     this.cartItemList = []
     this.productList.next(this.cartItemList);
     this.totalFoodPrice.next(this.getTotalPrice());
+  }
+
+  orders(data:any) {
+    return this.http.post(`${coreApiURL}${api_url.ORDERS}`,data);
   }
 }

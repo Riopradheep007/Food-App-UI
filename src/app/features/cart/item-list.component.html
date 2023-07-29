@@ -4,7 +4,7 @@
 <div class="cart">
     <div class="container" *ngIf="!isCartEmpty"> 
         <h2>Your Cart</h2>
-         <div class="display-cart-food" *ngFor = "let product of products ">
+         <div class="display-cart-food" *ngFor="let product of products">
              <div class="cart-food image">
                  <img [src]="'../../../assets/RestaurentImageDataBase/'+product.foodImagePath" alt="">
              </div>

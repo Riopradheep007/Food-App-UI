@@ -11,7 +11,7 @@ export class FoodsService {
   public foodList = new BehaviorSubject<any>([]);
   constructor(private http:HttpClient) { }
   getfoods(foodType:string) {
-    return this.http.get<any>(`${coreApiURL}${api_url.GET_ALL__RESTAURENT_FOODS}/${foodType}`)
+    return this.http.get<any>(`${coreApiURL}${api_url.GET_ALL_RESTAURENT_FOODS}/${foodType}`)
     .pipe(map((res:any) => {
      return res; 
     }))
