@@ -8,12 +8,14 @@ export interface RestaurentInformation
     restaurentStatus:string
 }
 
-export interface orderDetails
+export interface ordersDetails
 {
+    orderId:number,
     name:string,
     paid:number,
-    orderDetails:[string],
-    status:number,
+    orderDetails:string,
     restaurentId:number,
-    location:string
+    location:string,
+    Date:string,
+    status:number
 }

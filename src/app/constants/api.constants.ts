@@ -24,6 +24,8 @@ export const api_url = {
     RESTAURENT:`${controllerName.RESTAURENT}`,
     UPDATE_FOOD:`${controllerName.RESTAURENT}/foods`,
     GET_ALL_FOODS:`${controllerName.RESTAURENT}/foods`,
+    GET_ORDERS:`${controllerName.RESTAURENT}/orders`,
+    UPDATE_ORDER_STATUS:`${controllerName.RESTAURENT}/orders`,
 
     //Customer
     GET_ALL_RESTAURENT_FOODS:`${controllerName.CUSTOMER}/foods`,

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { orderDetails } from 'src/app/models/restaurent';
+import { orders } from 'src/app/models/foodDetails.model';
 import { CartService } from 'src/app/service/cart.service';
-import { OrderPlacedComponent } from 'src/app/shared/popup/order-placed/order-placed.component';
 import { SharedService } from 'src/app/shared/shared.service';
 @Component({
   selector: 'app-item-list',
@@ -87,8 +86,7 @@ export class ItemListComponent implements OnInit {
       let payload = {
         name:this.userName,
         paid:restaurentOrdersTotalPrice.get(restaurantId),
-        orderDetails:orders,
-        status:0,
+        orderDetails:orders.join(","),
         restaurentId:restaurantId,
         location:"4th building anna nagar tiruppur"
       };

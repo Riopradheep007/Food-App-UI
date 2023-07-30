@@ -7,3 +7,12 @@ export class foodDetails {
     price:number = 0;
 
 }
+
+export interface orders
+{
+    name:string,
+    paid:number,
+    orderDetails:string,
+    restaurentId:number,
+    location:string
+}

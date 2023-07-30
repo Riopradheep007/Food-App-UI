@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CartService } from '../service/cart.service';
 import { SharedService } from '../shared/shared.service';
 import { SideBarMenu } from '../models/sideBarMenu.model';
+import { RestaurentFoodService } from '../service/restaurent-food.service';
 @Component({
   selector: 'app-foods',
   templateUrl: './foods.component.html',
@@ -13,11 +14,12 @@ export class FoodsComponent implements OnInit {
   role:string = '';
   sideNavWidth:any = '180px';
   totalItem:number = 0;
+  receivedOrdersCount:number = 0;
   showFiller = false;
   public searchTerm !: string;
   menuItems:any;
   constructor(private router:Router,private cartservice:CartService,
-     private sharedService:SharedService) { }
+     private sharedService:SharedService,private restaurentService:RestaurentFoodService) { }
   sideBarMenu:SideBarMenu[] = [];
   ngOnInit(): void {
  
@@ -28,9 +30,18 @@ export class FoodsComponent implements OnInit {
     this.cartservice.getProducts()
     .subscribe(a => {
        this.totalItem = a.length;
-    })
+    });
+    this.getPendingOrdersCount();
    
   }
+
+  getPendingOrdersCount()
+  {
+    this.restaurentService.getPendingOrdersCount().subscribe((res:any)=>{
+       this.receivedOrdersCount = res;
+    });
+  }
+    
   getUserData()
   {
     this.sharedService.userData.subscribe((res) =>{

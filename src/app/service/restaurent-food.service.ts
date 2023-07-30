@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { api_url, coreApiURL } from '../constants/api.constants';
 import { RestaurentInformation } from '../models/restaurent';
 
@@ -8,8 +8,12 @@ import { RestaurentInformation } from '../models/restaurent';
   providedIn: 'root'
 })
 export class RestaurentFoodService {
-
+  public pendingOrdersCount = new BehaviorSubject<any>(0);
   constructor(private http:HttpClient) { }
+
+  getPendingOrdersCount() {
+    return this.pendingOrdersCount.asObservable();
+  }
 
   getRestaurentInformation(id:number)
   {
@@ -46,5 +50,13 @@ export class RestaurentFoodService {
   updateRestaurentInformation(payload:RestaurentInformation)
   {
     return this.http.put(`${coreApiURL}${api_url.RESTAURENT_INFORMATION}`,payload);
+  }
+  getOrders(id:number)
+  {
+    return this.http.get(`${coreApiURL}${api_url.GET_ORDERS}/${id}`);
+  }
+  updateOrderStatus(data:any)
+  {
+    return this.http.put(`${coreApiURL}${api_url.UPDATE_ORDER_STATUS}`,data);
   }
 }
