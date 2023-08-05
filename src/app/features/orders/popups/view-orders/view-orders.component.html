@@ -1,0 +1,15 @@
+<div class="view-orders">
+    <h2>Orders</h2>
+    <div class="order-list">
+        <div  *ngFor="let order of orders">
+            <h3>{{order}}</h3>
+        </div>
+    </div>
+
+    <div align="center">
+        <button mat-raised-button mat-dialog-close class="close-btn">
+            Close
+        </button>
+    </div>
+ 
+</div>

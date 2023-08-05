@@ -17,7 +17,7 @@ export class DashComponent implements OnInit,AfterViewInit{
     this.revenueChart();
     this.popularFoodChart();
    },0);
-
+   
 
   }
   ngAfterViewInit(){
@@ -28,7 +28,7 @@ export class DashComponent implements OnInit,AfterViewInit{
       {
        "title":"Customers",
         "icon":"person",
-        "count":25,
+        "count":500,
         "cardColor": '#59A5FF'
       },
       {

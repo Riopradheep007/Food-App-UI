@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { Observable } from 'rxjs';
+import { SharedService } from '../shared/shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,13 @@ export class SignalrService {
 
   hubUrl: string;
   connection: any;
+  restaurentId:number = 0;
 
-  constructor() {
+  constructor(private sharedService:SharedService) {
     this.hubUrl = 'https://localhost:7234/signalr-hub';
+    this.sharedService.userData.subscribe((res) =>{
+      this.restaurentId = res.id;
+    });
   }
 
   public async initiateSignalrConnection(): Promise<void> {
@@ -58,6 +63,21 @@ export class SignalrService {
     return new Observable(observer => {
       this.connection.on('IceCream', (data: any) => {
         observer.next(data);
+      });
+    })
+  }
+  getCustomerOrders() {
+    let orders:any = [];
+    return new Observable(observer => {
+      this.connection.on('Orders', (data: any) => {
+        data.forEach((res:any) => {
+          if(res.restaurentId == this.restaurentId)
+          {
+            orders.push(res);
+          }
+          
+        });
+        observer.next(orders);
       });
     })
   }

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ordersDetails } from 'src/app/models/restaurent';
 import { RestaurentFoodService } from 'src/app/service/restaurent-food.service';
 import { SharedService } from 'src/app/shared/shared.service';
+import { ViewOrdersComponent } from './popups/view-orders/view-orders.component';
+import { SignalrService } from 'src/app/service/signalr.service';
 
 
 
@@ -14,67 +17,29 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class OrdersComponent implements OnInit {
   orders:any;
   restaurentId:number = 0;
-  constructor(private restaurentService:RestaurentFoodService, private sharedService:SharedService ) { }
+  constructor(private restaurentService:RestaurentFoodService, private dialog: MatDialog,
+    private sharedService:SharedService,private signalrService:SignalrService ) { }
 
   ngOnInit(): void {
     this.getUserID();
+    this.getCustomerOrders();
+  }
+  
+  getCustomerOrders()
+  {
     this.restaurentService.getOrders(this.restaurentId).subscribe((res:any) =>{
       this.pendingOrdersCount(res);
       this.orders = res;
     });
-    // this.orders = [
-    //  {
-    //   orderId:32,
-    //   date:"17 Nov,01:00 PM",
-    //   name:"pradheep",
-    //   paid:350,
-    //   status:0
-    //  },
-    //  {
-    //   orderId:323,
-    //   date:"17 Nov,01:05 PM",
-    //   name:"dhanasekar",
-    //   paid:580,
-    //   status:1
-    //  },
-    //  {
-    //   orderId:325,
-    //   date:"17 Nov,04:05 PM",
-    //   name:"uthaya",
-    //   paid:1540,
-    //   status:2
-    //  },
-    //  {
-    //   orderId:323,
-    //   date:"17 Nov,01:05 PM",
-    //   name:"dhanasekar",
-    //   paid:580,
-    //   status:1
-    //  },
-    //  {
-    //   orderId:325,
-    //   date:"17 Nov,04:05 PM",
-    //   name:"uthaya",
-    //   paid:1540,
-    //   status:2
-    //  },
-    //  {
-    //   orderId:323,
-    //   date:"17 Nov,01:05 PM",
-    //   name:"dhanasekar",
-    //   paid:580,
-    //   status:1
-    //  },
-    //  {
-    //   orderId:325,
-    //   date:"17 Nov,04:05 PM",
-    //   name:"uthaya",
-    //   paid:1540,
-    //   status:2
-    //  },
-    // ]
+    this.signalrService.getCustomerOrders().subscribe((res:any)=>{
+      if(res){
+        this.orders = [];
+        this.pendingOrdersCount(res);
+        this.orders = res;
+      }
+    })
   }
-
+   
   getUserID()
   {
      this.sharedService.userData.subscribe((res) =>{
@@ -105,6 +70,17 @@ export class OrdersComponent implements OnInit {
       }
     });
     this.restaurentService.pendingOrdersCount.next(count);
+  }
+
+  viewOrders(orders:string)
+  {
+    this.dialog.open(ViewOrdersComponent,{
+      width: "400px",
+      disableClose: true,
+      autoFocus:false,
+      panelClass: 'myapp-no-padding-dialog',
+      data:orders
+    });
   }
 
 }

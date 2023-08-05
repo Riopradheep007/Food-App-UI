@@ -30,6 +30,9 @@
                         <span *ngIf="order.status == 1" [ngClass]="'color'+order.status">{{"Preparing"}}</span>
                         <span *ngIf="order.status == 2" [ngClass]="'color'+order.status">{{"Delivered"}}</span>
                     </div>
+                    <div class="center-item">
+                        <span class="material-icons cursor-pointer" (click)="viewOrders(order.orderDetails)">text_snippet</span>
+                    </div>
                     <div *ngIf="order.status == 0" class="center-item align-end btn">
                             <div>
                                 <button mat-button cdkFocusInitial class="accept-btn small-btn" (click)="updateStatus(order,1)">Accept</button>
@@ -37,9 +40,6 @@
                             <div>
                                 <button mat-button class="decline-btn"  (click)="updateStatus(order,-1)">Decline</button>
                             </div>
-                    </div>
-                    <div class="center-item" *ngIf="order.status == 1">
-                        <span class="material-icons cursor-pointer">text_snippet</span>
                     </div>
                     <div class="center-item btn align-end" *ngIf="order.status == 1">
                         <button mat-button  class="button-color"  (click)="updateStatus(order,2)">Mark as Prepared</button>
