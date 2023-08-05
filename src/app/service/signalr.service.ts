@@ -81,6 +81,18 @@ export class SignalrService {
       });
     })
   }
+
+  getDashboardData() {
+    return new Observable(observer => {
+      this.connection.on('Dashboard', (data: any) => {
+        if(data.restaurentId == this.restaurentId)
+        {
+          observer.next(data);
+        }
+     
+      });
+    })
+  }
  
 
 }

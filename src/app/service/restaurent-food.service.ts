@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { api_url, coreApiURL } from '../constants/api.constants';
-import { RestaurentInformation } from '../models/restaurent';
+import { Dashboard, RestaurentInformation } from '../models/restaurent';
 
 @Injectable({
   providedIn: 'root'
@@ -59,4 +59,9 @@ export class RestaurentFoodService {
   {
     return this.http.put(`${coreApiURL}${api_url.UPDATE_ORDER_STATUS}`,data);
   }
+  getDashboardData(id:number)
+  {
+   return this.http.get<Dashboard>(`${coreApiURL}${api_url.DASHBOARD_DATA}/${id}`);
+  }
+
 }

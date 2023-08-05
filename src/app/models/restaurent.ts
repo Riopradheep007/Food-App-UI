@@ -19,3 +19,13 @@ export interface ordersDetails
     Date:string,
     status:number
 }
+
+export interface Dashboard
+{
+    customers:number
+    revenue:number
+    pendingOrders:number
+    deliveredOrders:number 
+    cancelledOrders:number
+    revenues:[]
+}
