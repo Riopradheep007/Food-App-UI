@@ -67,9 +67,10 @@ export class SignalrService {
     })
   }
   getCustomerOrders() {
-    let orders:any = [];
+
     return new Observable(observer => {
       this.connection.on('Orders', (data: any) => {
+        let orders:any = [];
         data.forEach((res:any) => {
           if(res.restaurentId == this.restaurentId)
           {
