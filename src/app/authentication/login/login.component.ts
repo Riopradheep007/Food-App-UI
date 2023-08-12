@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
             setTimeout(() =>{
             this.loginForm.reset();
             this.pageToNavigate(JSON.parse(res).role);
-          },560)
+          },500)
         }
       },
       error: (err: HttpErrorResponse) => {

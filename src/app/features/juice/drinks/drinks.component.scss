@@ -14,6 +14,16 @@
     padding: 10px;
     margin:10px;
   }
+
+  
+  .disable-food {
+    fill: grey;
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #c1bcbc;
+    opacity: 0.5;
+  }
+  
   
   
   

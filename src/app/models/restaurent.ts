@@ -27,5 +27,5 @@ export interface Dashboard
     pendingOrders:number
     deliveredOrders:number 
     cancelledOrders:number
-    revenues:[]
+    revenues:number[]
 }

@@ -12,7 +12,7 @@ import { RestaurentFoodService } from '../service/restaurent-food.service';
 export class FoodsComponent implements OnInit {
   userName?:string;
   role:string = '';
-  sideNavWidth:any = '180px';
+  sideNavWidth:any = '73px';
   totalItem:number = 0;
   receivedOrdersCount:number = 0;
   showFiller = false;
@@ -22,8 +22,6 @@ export class FoodsComponent implements OnInit {
      private sharedService:SharedService,private restaurentService:RestaurentFoodService) { }
   sideBarMenu:SideBarMenu[] = [];
   ngOnInit(): void {
- 
-    this.sideNavWidth = '70px';
     this.sharedService.getDataFromSessionStorage();
     this.getUserData();
     this.loadSideBarMenus();
@@ -76,16 +74,6 @@ export class FoodsComponent implements OnInit {
     this.sharedService.clearSessionData();
     this.router.navigate(['/auth/login']);
   }
-  expand(drawer:any) {
-    if(this.sideNavWidth == '70px'){
-      this.sideNavWidth = '180px';
-    }
-    else{
-      this.sideNavWidth = '70px';
-    }
-  
-  }
-
   search(event:any){
     this.searchTerm = (event.target as HTMLInputElement).value;
     this.cartservice.search.next(this.searchTerm);

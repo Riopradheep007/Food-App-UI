@@ -8,7 +8,6 @@
             <div *ngFor="let data of sideBarMenu">
               <li><a routerLink={{data.routeLink}} routerLinkActive="active"  >
                 <mat-icon class="matIcons">{{data.iconName}}</mat-icon>
-                <span class="icon-text">{{data.displayName}}</span>
                </a></li>
             </div>
           </div>
@@ -17,11 +16,6 @@
             <li>
               <a>
                 <mat-icon class="matIcons">settings</mat-icon>
-               </a>
-             </li>
-             <li (click)="expand(drawer)">
-              <a>
-                <mat-icon  class="matIcons expander" style="transform: rotate(90deg);">expand</mat-icon>
                </a>
              </li>
              <li (click)="logout()">
