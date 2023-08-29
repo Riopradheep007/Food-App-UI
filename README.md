@@ -2,26 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
-## Development server
+## Installation
+ 1.Clone repo
+   ```sh
+   https://github.com/Riopradheep007/Food-App-UI.git
+   ```
+ 2.Install NPM packages
+  ```sh
+  npm install
+  ```
+ 3.Run
+  ```sh
+  ng serve
+  ```
+ 4.Application Url
+  ```sh
+  http://localhost:4200/
+  ```
+## Build With
+ <img src="https://github.com/Riopradheep007/Riopradheep007/assets/46066018/ffe627f9-4632-40a3-b6ae-d9a93a55763a" width="50" height="50">
+ <img src = "https://github.com/Riopradheep007/Riopradheep007/assets/46066018/7bb41f9a-8098-417c-b76f-02e2e9a4d3959" width="50" height="50">
+ <img src = "https://github.com/Riopradheep007/Riopradheep007/assets/46066018/8402ea22-0e33-43ac-afc2-3451260a1583" width="50" height="50">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
