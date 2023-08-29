@@ -4,10 +4,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installation
  1.Clone repo
- ```sh
-  https://github.com/Riopradheep007/Food-App-UI.git
- ```
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+   ```sh
+   https://github.com/Riopradheep007/Food-App-UI.git
+   ```
+ 2.Install NPM packages
+  ```sh
+  npm install
+  ```
+ 3.Run
+  ```sh
+  ng serve
+  ```
+ 4.Application Url
+  ```sh
+  http://localhost:4200/
+  ```
 
 
