@@ -1,6 +1,14 @@
 # FoodDeliveryApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This project was  
+generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+
+https://github.com/Riopradheep007/Food-App-UI/assets/46066018/80aca3ea-6f4a-4fdf-89df-1faa9c554981
+
+
+https://github.com/Riopradheep007/Food-App-UI/assets/46066018/050eb812-baec-43b4-8aea-2c7aeb4cf4ae
+
+
 
 ## Installation
  1.Clone repo
