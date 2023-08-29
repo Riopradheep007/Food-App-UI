@@ -83,6 +83,10 @@ export class DashComponent implements OnInit{
 
   revenueChart(revenue:number[])
   {
+    var existingChart = Chart.getChart("revenue-chart");
+    if (existingChart) {
+      existingChart.destroy();
+    }
     let chart =  new Chart("revenue-chart", {
       type: 'bar',
       data: {
